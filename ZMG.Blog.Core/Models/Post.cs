@@ -1,0 +1,14 @@
+namespace ZMG.Blog.Core.Models
+{
+    public class Post : Model
+    {
+        public string Title {get;set;}
+        public int Views {get;set;} = 0;
+        public string Content {get;set;}
+        public string Excerpt {get;set;}
+        public string CoverImagePath {get;set;} 
+        public bool Public {get;set;}
+        public IList<Comment> Comments { get; } = new List<Comment>();
+
+    }
+}
