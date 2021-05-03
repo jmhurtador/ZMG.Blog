@@ -1,12 +1,15 @@
+using System;
+
 namespace ZMG.Blog.Core.Models
 {
     public class Comment
     {
-        public string Author { get; set; } = string.Empty;
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Content { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string ID { get; set; } = Guid.NewGuid().ToString();
-        public bool IsAdmin { get; set; } = false;
-        public DateTime PubDate { get; set; } = DateTime.UtcNow;
+        public DateTime PublishDate { get; set; } = DateTime.UtcNow;
+        public Guid? AuthorId { get; set; }
+        public User Author { get; set; }
+        public Guid PostId { get; set; }
+        public Post Post { get; set; }
     }
 }

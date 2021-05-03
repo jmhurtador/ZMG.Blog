@@ -2,25 +2,49 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using ZMG.Blog.Mvc.Models;
+using ZMG.Blog.Mvc.ViewModels;
 
 namespace ZMG.Blog.Mvc.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IConfiguration _Config;
+        private string URLBase
+        {
+            get
+            {
+                return _Config.GetSection("BaseURL").GetSection("URL").Value;
+            }
+        }
+        public HomeController(ILogger<HomeController> logger, IConfiguration Config)
         {
             _logger = logger;
+            _Config = Config;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var listPost = new ListPostViewModel();
+            var postList = new List<Post>();
+            using (var httpClient = new HttpClient())
+            {
+
+                using (var response = await httpClient.GetAsync(URLBase + "Music"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    postList = JsonConvert.DeserializeObject<List<Post>>(apiResponse);
+                }
+            }
+            listPost.ListPost = postList;
+            return View(listPost);
         }
 
         public IActionResult Privacy()

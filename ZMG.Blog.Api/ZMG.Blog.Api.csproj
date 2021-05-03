@@ -5,8 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.5" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ZMG.Blog.Core\ZMG.Blog.Core.csproj" />
+    <ProjectReference Include="..\ZMG.Blog.Data\ZMG.Blog.Data.csproj" />
+    <ProjectReference Include="..\ZMG.Blog.Services\ZMG.Blog.Services.csproj" />
   </ItemGroup>
 
 </Project>

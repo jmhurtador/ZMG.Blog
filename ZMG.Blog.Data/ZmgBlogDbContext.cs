@@ -1,17 +1,46 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
+using ZMG.Blog.Core.Models;
 
 namespace ZMG.Blog.Data
 {
-    public class ZmgBlogDbContext : DbContext
+    [ExcludeFromCodeCoverage]
+    public partial class ZmgBlogDbContext : IdentityDbContext<User, Role, string, IdentityUserClaim<string>,
+        UserRole, IdentityUserLogin<string>, IdentityRoleClaim<string>, IdentityUserToken<string>>
     {
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+
+        public ZmgBlogDbContext()
+        {
+        }
+
         public ZmgBlogDbContext(DbContextOptions<ZmgBlogDbContext> options) : base(options)
         {
         }
 
-        public DbSet<Post> Posts { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
 
-        public DbSet<Comment> Comments { get; set; }
+            builder.Entity<UserRole>(userRole =>
+            {
+                userRole.HasKey(ur => new { ur.UserId, ur.RoleId });
 
-        public DbSet<CatalogType> CatalogTypes { get; set; }
+                userRole.HasOne(ur => ur.Role)
+                    .WithMany(r => r.UserRoles)
+                    .HasForeignKey(ur => ur.RoleId)
+                    .IsRequired();
+
+                userRole.HasOne(ur => ur.User)
+                    .WithMany(r => r.UserRoles)
+                    .HasForeignKey(ur => ur.UserId)
+                    .IsRequired();
+            });
+
+            builder.DataSeed();
+        }
     }
 }

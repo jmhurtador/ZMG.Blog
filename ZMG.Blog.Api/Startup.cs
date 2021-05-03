@@ -1,16 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Pomelo.EntityFrameworkCore.MySql;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using System;
+using System.Reflection;
+using ZMG.Blog.Data;
+using ZMG.Blog.Services.Extensions;
 
 namespace ZMG.Blog.Api
 {
@@ -28,11 +29,17 @@ namespace ZMG.Blog.Api
         {
 
             services.AddControllers();
-            services.AddDbContext<ZmgBlogDbContext>(options => options.UseMySql (Configuration.GetConnectionString("DefaultConnection")));
+            var startupAssemblyName = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+            services.AddDbContext<ZmgBlogDbContext>(options =>
+                        options.UseMySql(Configuration.GetConnectionString("ZmgBlogDB"), new MySqlServerVersion(new Version(8, 0, 20)), mySqlOptions => {
+                            mySqlOptions.MigrationsAssembly(startupAssemblyName);
+                        }));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ZMG Blog Api", Description = "ZMG Blog Api", Version = "v1" });
             });
+            services.AddZmgBlogServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

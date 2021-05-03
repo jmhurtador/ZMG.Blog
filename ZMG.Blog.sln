@@ -3,13 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZMG.Blog.Api", "ZMG.Blog.Api\ZMG.Blog.Api.csproj", "{06256004-3799-41A9-AB40-9F6673D7FF0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZMG.Blog.Api", "ZMG.Blog.Api\ZMG.Blog.Api.csproj", "{06256004-3799-41A9-AB40-9F6673D7FF0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZMG.Blog.Core", "ZMG.Blog.Core\ZMG.Blog.Core.csproj", "{7D18DCE6-A7EF-425C-B0B7-01068061ED3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZMG.Blog.Core", "ZMG.Blog.Core\ZMG.Blog.Core.csproj", "{7D18DCE6-A7EF-425C-B0B7-01068061ED3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZMG.Blog.Data", "ZMG.Blog.Data\ZMG.Blog.Data.csproj", "{2A38AA84-3314-4D29-973F-58A0024F351F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZMG.Blog.Data", "ZMG.Blog.Data\ZMG.Blog.Data.csproj", "{2A38AA84-3314-4D29-973F-58A0024F351F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZMG.Blog.Mvc", "ZMG.Blog.Mvc\ZMG.Blog.Mvc.csproj", "{9AF096E4-CC40-4AC4-8BAA-E45356E1ADAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZMG.Blog.Mvc", "ZMG.Blog.Mvc\ZMG.Blog.Mvc.csproj", "{9AF096E4-CC40-4AC4-8BAA-E45356E1ADAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZMG.Blog.Services", "ZMG.Blog.Services\ZMG.Blog.Services.csproj", "{35786EA7-3216-4AFD-9371-6592E9500E14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{C8FE15FE-2EF8-440A-BCB1-2CD3D7E4E5D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{8C349598-9EE8-4255-8E14-4396A708794F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7AA045A6-7133-4491-9BF1-CE3DE89AE8E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{06256004-3799-41A9-AB40-9F6673D7FF0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +77,30 @@ Global
 		{9AF096E4-CC40-4AC4-8BAA-E45356E1ADAF}.Release|x64.Build.0 = Release|Any CPU
 		{9AF096E4-CC40-4AC4-8BAA-E45356E1ADAF}.Release|x86.ActiveCfg = Release|Any CPU
 		{9AF096E4-CC40-4AC4-8BAA-E45356E1ADAF}.Release|x86.Build.0 = Release|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Debug|x64.Build.0 = Debug|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Debug|x86.Build.0 = Debug|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Release|x64.ActiveCfg = Release|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Release|x64.Build.0 = Release|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Release|x86.ActiveCfg = Release|Any CPU
+		{35786EA7-3216-4AFD-9371-6592E9500E14}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06256004-3799-41A9-AB40-9F6673D7FF0F} = {C8FE15FE-2EF8-440A-BCB1-2CD3D7E4E5D9}
+		{7D18DCE6-A7EF-425C-B0B7-01068061ED3F} = {C8FE15FE-2EF8-440A-BCB1-2CD3D7E4E5D9}
+		{2A38AA84-3314-4D29-973F-58A0024F351F} = {C8FE15FE-2EF8-440A-BCB1-2CD3D7E4E5D9}
+		{9AF096E4-CC40-4AC4-8BAA-E45356E1ADAF} = {8C349598-9EE8-4255-8E14-4396A708794F}
+		{35786EA7-3216-4AFD-9371-6592E9500E14} = {C8FE15FE-2EF8-440A-BCB1-2CD3D7E4E5D9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E5757DB-FF29-47DC-89F6-D3CB9F579E8B}
 	EndGlobalSection
 EndGlobal
