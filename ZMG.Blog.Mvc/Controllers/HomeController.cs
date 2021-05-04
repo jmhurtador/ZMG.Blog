@@ -37,7 +37,7 @@ namespace ZMG.Blog.Mvc.Controllers
             using (var httpClient = new HttpClient())
             {
 
-                using (var response = await httpClient.GetAsync(URLBase + "Music"))
+                using (var response = await httpClient.GetAsync(URLBase + "post"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     postList = JsonConvert.DeserializeObject<List<Post>>(apiResponse);

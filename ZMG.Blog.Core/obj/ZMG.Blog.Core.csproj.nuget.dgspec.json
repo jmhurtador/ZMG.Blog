@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SOURCE\\ZMG.Blog\\ZMG.Blog.Core\\ZMG.Blog.Core.csproj": {}
+    "C:\\Users\\Dell\\source\\repos\\jmhurtador\\ZMG.Blog\\ZMG.Blog.Core\\ZMG.Blog.Core.csproj": {}
   },
   "projects": {
-    "C:\\SOURCE\\ZMG.Blog\\ZMG.Blog.Core\\ZMG.Blog.Core.csproj": {
+    "C:\\Users\\Dell\\source\\repos\\jmhurtador\\ZMG.Blog\\ZMG.Blog.Core\\ZMG.Blog.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SOURCE\\ZMG.Blog\\ZMG.Blog.Core\\ZMG.Blog.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\jmhurtador\\ZMG.Blog\\ZMG.Blog.Core\\ZMG.Blog.Core.csproj",
         "projectName": "ZMG.Blog.Core",
-        "projectPath": "C:\\SOURCE\\ZMG.Blog\\ZMG.Blog.Core\\ZMG.Blog.Core.csproj",
-        "packagesPath": "C:\\Users\\Hurtado Bustamante\\.nuget\\packages\\",
-        "outputPath": "C:\\SOURCE\\ZMG.Blog\\ZMG.Blog.Core\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\source\\repos\\jmhurtador\\ZMG.Blog\\ZMG.Blog.Core\\ZMG.Blog.Core.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\source\\repos\\jmhurtador\\ZMG.Blog\\ZMG.Blog.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hurtado Bustamante\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

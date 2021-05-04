@@ -1,10 +1,9 @@
 using System;
 
-namespace ZMG.Blog.Core.Models
+namespace ZMG.Blog.Core.Entities
 {
-    public class Comment
+    public class Comment : BaseEntity
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Content { get; set; } = string.Empty;
         public DateTime PublishDate { get; set; } = DateTime.UtcNow;
         public Guid? AuthorId { get; set; }

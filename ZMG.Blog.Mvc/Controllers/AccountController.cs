@@ -43,7 +43,7 @@ namespace ZMG.Blog.Mvc.Controllers
                 {
                     string stringData = JsonConvert.SerializeObject(model);
                     var contentData = new StringContent(stringData, System.Text.Encoding.UTF8, "application/json");
-                    var response = await client.PostAsync(URLBase + "User/authenticate", contentData);
+                    var response = await client.PostAsync(URLBase + "user/login", contentData);
                     var result = response.IsSuccessStatusCode;
                     if (result)
                     {
@@ -51,8 +51,8 @@ namespace ZMG.Blog.Mvc.Controllers
                         var jwt = JsonConvert.DeserializeObject<System.IdentityModel.Tokens.Jwt.JwtPayload>(stringJWT);
                         var jwtString = jwt["token"].ToString();
                         HttpContext.Session.SetString("token", jwtString);
-                        HttpContext.Session.SetString("username", jwt["username"].ToString());
-                        ViewBag.Message = "User logged in successfully!  " + jwt["username"].ToString();
+                        HttpContext.Session.SetString("email", jwt["email"].ToString());
+                        ViewBag.Message = $"User logged in successfully!  {jwt["firstname"]} {jwt["lastname"]}";
                     }
                     return View(model);
                 }

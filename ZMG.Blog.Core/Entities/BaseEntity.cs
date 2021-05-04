@@ -1,6 +1,6 @@
 using System;
 
-namespace ZMG.Blog.Core.Models
+namespace ZMG.Blog.Core.Entities
 {
     public class BaseEntity
     {

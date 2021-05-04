@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
-using ZMG.Blog.Core.Models;
+using ZMG.Blog.Core.Entities;
 
 namespace ZMG.Blog.Data
 {

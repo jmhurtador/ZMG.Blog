@@ -10,7 +10,9 @@ using Pomelo.EntityFrameworkCore.MySql;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System;
 using System.Reflection;
+using ZMG.Blog.Api.Extensions;
 using ZMG.Blog.Data;
+using ZMG.Blog.Data.Extensions;
 using ZMG.Blog.Services.Extensions;
 
 namespace ZMG.Blog.Api
@@ -39,6 +41,8 @@ namespace ZMG.Blog.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ZMG Blog Api", Description = "ZMG Blog Api", Version = "v1" });
             });
+            services.AddZmgBlogDataServices();
+            services.AddZmgBlogApiServices(Configuration);
             services.AddZmgBlogServices();
         }
 

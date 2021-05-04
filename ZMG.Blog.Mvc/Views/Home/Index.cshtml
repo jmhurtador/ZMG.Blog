@@ -7,18 +7,20 @@
     <thead>
         <tr>
             <th>Title</th>
-            <th>Artist</th>
+            <th>Content</th>
+            <th>Author</th>
 
         </tr>
     </thead>
     <tbody>
         @foreach (var post in Model.ListPost)
         {
-            <tr>
-                <td class="text-center">@post..Name </td>
-                <td class="text-left">@post.Content </td>
+        <tr>
+            <td class="text-center">@post.Title </td>
+            <td class="text-left">@post.Content </td>
+            <td class="text-left">@post. </td>
 
-            </tr>
+        </tr>
         }
     </tbody>
 

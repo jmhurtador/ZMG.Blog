@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ZMG.Blog.Core.Models;
+using ZMG.Blog.Core.Entities;
 
 namespace ZMG.Blog.Core.Interfaces.Repositories
 {

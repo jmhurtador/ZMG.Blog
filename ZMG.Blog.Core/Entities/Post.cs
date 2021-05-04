@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ZMG.Blog.Core.Models
+namespace ZMG.Blog.Core.Entities
 {
     public class Post : BaseEntity
     {

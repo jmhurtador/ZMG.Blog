@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Identity;
 
-namespace ZMG.Blog.Core.Models
+namespace ZMG.Blog.Core.Entities
 {
     /// <summary>
     /// Class to extend the default IdentityUser properties with custom properties we need for our users.

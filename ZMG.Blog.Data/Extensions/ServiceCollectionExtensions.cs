@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using ZMG.Blog.Core.Interfaces.Services;
-using ZMG.Blog.Services.Services;
+using ZMG.Blog.Core.Interfaces.Repositories;
+using ZMG.Blog.Data.Repositories;
 
-namespace ZMG.Blog.Services.Extensions
+namespace ZMG.Blog.Data.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -11,10 +11,9 @@ namespace ZMG.Blog.Services.Extensions
         /// </summary>
         /// <param name="services">Service Collection instance</param>
         /// <returns>Service Collection instance with the services added</returns>
-        public static IServiceCollection AddZmgBlogServices(this IServiceCollection services)
+        public static IServiceCollection AddZmgBlogDataServices(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(ServiceCollectionExtensions));
-            services.AddTransient<IPostService, PostService>();
+            services.AddTransient<IPostRepository, PostRepository>();
 
             return services;
         }
