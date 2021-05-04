@@ -30,21 +30,22 @@ namespace ZMG.Blog.Mvc.Controllers
             _Config = Config;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var listPost = new ListPostViewModel();
-            var postList = new List<Post>();
-            using (var httpClient = new HttpClient())
-            {
+            //var listPost = new ListPostViewModel();
+            //var postList = new List<Post>();
+            //using (var httpClient = new HttpClient())
+            //{
 
-                using (var response = await httpClient.GetAsync(URLBase + "post"))
-                {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    postList = JsonConvert.DeserializeObject<List<Post>>(apiResponse);
-                }
-            }
-            listPost.ListPost = postList;
-            return View(listPost);
+            //    using (var response = await httpClient.GetAsync(URLBase + "post"))
+            //    {
+            //        string apiResponse = await response.Content.ReadAsStringAsync();
+            //        postList = JsonConvert.DeserializeObject<List<Post>>(apiResponse);
+            //    }
+            //}
+            //listPost.ListPost = postList;
+            //return View(listPost);
+            return View();
         }
 
         public IActionResult Privacy()

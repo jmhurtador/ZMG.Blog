@@ -175,3 +175,4 @@ C:\Users\Dell\source\repos\jmhurtador\ZMG.Blog\ZMG.Blog.Mvc\bin\Debug\net5.0\run
 C:\Users\Dell\source\repos\jmhurtador\ZMG.Blog\ZMG.Blog.Mvc\obj\Debug\net5.0\ZMG.Blog.Mvc.Views.pdb
 C:\Users\Dell\source\repos\jmhurtador\ZMG.Blog\ZMG.Blog.Mvc\obj\Debug\net5.0\ZMG.Blog.Mvc.csproj.CopyComplete
 C:\Users\Dell\source\repos\jmhurtador\ZMG.Blog\ZMG.Blog.Mvc\obj\Debug\net5.0\ZMG.Blog.Mvc.genruntimeconfig.cache
+C:\Users\Dell\source\repos\jmhurtador\ZMG.Blog\ZMG.Blog.Mvc\obj\Debug\net5.0\Razor\Views\Shared\_LoginParcial.cshtml.g.cs
